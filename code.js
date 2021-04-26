@@ -92,6 +92,6 @@ window.onload = function () {
   newGrid();
   const slider = document.querySelector("#slider");
   slider.addEventListener("change", function (e) {
-    resizeGrid(e);
+    newGrid(e);
   });
 };

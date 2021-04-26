@@ -61,10 +61,8 @@ function decreaseLightness(colorString) {
   let HSLArray = RGBtoHSL(RGBArray);
 
   if (HSLArray[2] === 0) {
-    console.log("done");
     return;
   } else {
-    console.log(`darkening ${HSLArray}`);
     return `hsl(${HSLArray[0]}, ${HSLArray[1]}%, ${HSLArray[2] - 10}%)`;
   }
 }
