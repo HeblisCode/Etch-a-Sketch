@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#gameContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 800px;
+  width: 800px;
+  border: black solid 2px;
+}
+.gridCell {
+  border: black solid 1px;
+  box-sizing: border-box;
+}
