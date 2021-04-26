@@ -6,9 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-a-Sketch!</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="code.js"></script>
+    <script src="code.js" defer></script>
   </head>
   <body>
-    <div id="gameContainer" class="center"></div>
+    <div id="flexContainer" class="center">
+      <div id="gameContainer"></div>
+      <div id="buttonContainer">
+        <button id="rainbow">Rainbow</button>
+        <button id="black">Black</button>
+        <button id="gradient">Gradient</button>
+      </div>
+      <div id="sliderContainer">
+        <input type="range" min="10" max="60" value="30" id="slider" />
+      </div>
+    </div>
   </body>
 </html>

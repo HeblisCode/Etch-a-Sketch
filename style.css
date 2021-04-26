@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
 }
+#flexContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .center {
   position: absolute;
   left: 50%;
@@ -10,8 +15,7 @@
 }
 
 #gameContainer {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   height: 600px;
   width: 600px;
   border: black solid 2px;
@@ -20,6 +24,15 @@
   border: black solid 1px;
   box-sizing: border-box;
 }
-.black {
-  background-color: black;
+
+#buttonContainer {
+  margin: 20px;
+}
+#buttonContainer > button {
+  width: 100px;
+  height: 40px;
+  font-size: 15px;
+  border: none;
+  color: white;
+  background-color: rgb(25, 157, 201);
 }
