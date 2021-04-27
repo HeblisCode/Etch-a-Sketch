@@ -45,6 +45,9 @@ body {
 .roundBorder {
   border-radius: 4px;
 }
+.hover:hover {
+  transform: scale(1.1);
+}
 
 /*GAME CONTAINER SYLING***********************************************************************************/
 #gameContainer {
@@ -112,4 +115,20 @@ h1 {
 }
 #slider {
   width: 90%;
+}
+
+/*AUTHOR STYLING*********************************/
+#author {
+  position: absolute;
+  left: 18px;
+  bottom: 12px;
+  text-decoration: underline;
+}
+#author > a:hover {
+  color: var(--blue);
+}
+#author > a {
+  text-decoration: none;
+  color: var(--darkGrey);
+  font-size: 13px;
 }
