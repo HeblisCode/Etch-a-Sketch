@@ -95,7 +95,7 @@ function newGrid() {
 
   //buttons event listeners
   const colorModesArray = ["black", "rainbow", "lighten", "darken"];
-  let buttons = document.querySelectorAll("#buttonContainer > button");
+  let buttons = document.querySelectorAll("#controlsContainer > button");
   buttons.forEach((button, i) =>
     button.addEventListener("click", function () {
       if (i === buttons.length - 1) {

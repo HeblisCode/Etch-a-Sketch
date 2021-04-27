@@ -4,25 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-a-Sketch!</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="lib.js"></script>
     <script src="code.js"></script>
   </head>
   <body>
+    <div id="backgorund"></div>
     <div id="flexContainer" class="center">
       <div id="gameContainer"></div>
-      <div id="buttonContainer">
-        <button id="black">Black</button>
-        <button id="rainbow">Rainbow</button>
-        <button id="lighten">Lighten</button>
-        <button id="darken">Darken</button>
-        <button id="clear">Clear</button>
-      </div>
-      <div id="sliderContainer">
-        <input type="range" min="10" max="40" value="30" id="slider" />
-      </div>
-      <div id="colorPickerContainer">
-        <input type="color" name="colorPicker" id="colorPicker" />
+      <div id="controlsContainer">
+        <h1>Etch<br />a<br />Sketch</h1>
+        <button id="black" class="roundBorder">Black</button>
+        <button id="rainbow" class="roundBorder">Rainbow</button>
+        <button id="lighten" class="roundBorder">Lighten</button>
+        <button id="darken" class="roundBorder">Darken</button>
+        <button id="clear" class="roundBorder">Clear</button>
+        <label for="colorPicker" id="colorPickerContainer" class="roundBorder">
+          <input
+            type="color"
+            name="colorPicker"
+            id="colorPicker"
+            class="center"
+          />
+        </label>
+        <div id="sliderContainer" class="roundBorder">
+          <input type="range" min="10" max="40" value="30" id="slider" />
+        </div>
       </div>
     </div>
   </body>

@@ -1,44 +1,115 @@
+/*RESET***********************************************************************************/
 * {
   margin: 0;
   padding: 0;
+  font-family: "Krona One", sans-serif;
+}
+
+/*VARIABLES***********************************************************************************/
+:root {
+  --grey: rgb(241, 241, 241);
+  --blue: #1a73e8;
+  --darkGrey: rgb(51, 51, 51);
+}
+
+/*LAYOUT***********************************************************************************/
+body {
+  height: 100vh;
+  width: 100vh;
+  background: linear-gradient(-35deg, var(--blue) 45%, var(--grey) 45%);
+}
+#backgorund {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    30deg,
+    transparent 30%,
+    var(--darkGrey) 30%,
+    var(--darkGrey) 65%,
+    transparent 65%
+  );
 }
 #flexContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   align-items: center;
 }
+
+/*CLASSES*********************************************************************************/
 .center {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
+.roundBorder {
+  border-radius: 4px;
+}
 
+/*GAME CONTAINER SYLING***********************************************************************************/
 #gameContainer {
   box-sizing: border-box;
   display: grid;
-  height: 600px;
-  width: 600px;
+  height: 500px;
+  width: 500px;
   background-color: black;
   border: black solid 1px;
   gap: 1px;
-  border-radius: 10px;
   overflow: hidden;
-  -webkit-box-shadow: 5px 5px 12px 10px rgba(0, 0, 0, 0.81);
-  box-shadow: 5px 5px 12px 10px rgba(0, 0, 0, 0.81);
 }
 .gridCell {
   transition: all 0.2s;
 }
 
-#buttonContainer {
-  margin: 20px;
+/*CONTROLS STYLING**************************************************************************/
+#controlsContainer {
+  height: 500px;
+  width: 260px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px black solid;
+  margin-right: 50px;
+  background: var(--blue);
+  padding: 0 10px 0 10px;
 }
-#buttonContainer > button {
+h1 {
+  color: var(--grey);
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 40px;
+  text-align: center;
+}
+#controlsContainer > button,
+#colorPickerContainer,
+#colorPicker {
+  color: black;
   width: 100px;
-  height: 40px;
+  height: 50px;
   font-size: 15px;
+  background-color: var(--grey);
   border: none;
-  color: white;
-  background-color: rgb(25, 157, 201);
+  font-size: 13px;
+}
+#colorPickerContainer {
+  position: relative;
+}
+#colorPicker {
+  margin: 0;
+  width: 80px;
+  height: 30px;
+  border: none;
+}
+#sliderContainer {
+  width: 220px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--grey);
+  margin-bottom: 15px;
+}
+#slider {
+  width: 90%;
 }
