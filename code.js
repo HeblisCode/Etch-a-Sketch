@@ -1,10 +1,9 @@
 /*CELL CREATION******************************************************************************************/
 function createCells(size) {
   const gameContainer = document.querySelector("#gameContainer");
-  const cellSize = 600 / size;
   gameContainer.style.cssText = `
-    grid-template-columns: repeat(${600 / cellSize}, ${cellSize}px); 
-    grid-template-rows: repeat(${600 / cellSize}, ${cellSize}px);
+    grid-template-columns: repeat(${size}, 1fr); 
+    grid-template-rows: repeat(${size}, 1fr);
     `;
 
   for (let i = 0; i < size ** 2; i++) {
@@ -24,18 +23,27 @@ function colorRainbow(e) {
   e.target.style.cssText = `background-color: hsla(${randomHue}, 100%, 50%, 1)`;
 }
 function colorDarken(e) {
+  //defined in lib.js
   e.target.style.backgroundColor = decreaseLightness(
     e.target.style.backgroundColor
   );
 }
 function colorLighten(e) {
+  //defined in lib.js
   e.target.style.backgroundColor = increaseLightness(
     e.target.style.backgroundColor
   );
 }
+function colorHEX(e, color) {
+  e.target.style.backgroundColor = color;
+}
 
 /*MOUSEOVER HANDLER*******************************************************************************************/
 function draw(e, color) {
+  if (color.charAt(0) === "#") {
+    colorHEX(e, color);
+    return;
+  }
   switch (color) {
     case "black":
       colorBlack(e);
@@ -55,9 +63,17 @@ function draw(e, color) {
   }
 }
 
+/*CLEAR FUNCTION************************************************************************************************/
+function clearGrid() {
+  const cells = document.querySelectorAll(".gridCell");
+  cells.forEach(
+    (cell) => (cell.style.cssText = "background-color: rgb(255, 255, 255)")
+  );
+}
+
 /*NEW GAME - RESIZE*********************************************************************************************/
 function newGrid() {
-  let color; //stores the currently active color mode
+  let color = ""; //stores the currently active color mode
 
   if (arguments.length === 0) {
     //page load
@@ -82,9 +98,19 @@ function newGrid() {
   let buttons = document.querySelectorAll("#buttonContainer > button");
   buttons.forEach((button, i) =>
     button.addEventListener("click", function () {
-      color = colorModesArray[i];
+      if (i === buttons.length - 1) {
+        clearGrid();
+      } else {
+        color = colorModesArray[i];
+      }
     })
   );
+
+  //color picker
+  const colorPicker = document.querySelector("#colorPicker");
+  colorPicker.addEventListener("change", function (e) {
+    color = e.target.value;
+  });
 }
 
 /*ON LOAD*******************************************************************************************/

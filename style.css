@@ -15,14 +15,19 @@
 }
 
 #gameContainer {
+  box-sizing: border-box;
   display: grid;
   height: 600px;
   width: 600px;
-  border: black solid 2px;
+  background-color: black;
+  border: black solid 1px;
+  gap: 1px;
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-box-shadow: 5px 5px 12px 10px rgba(0, 0, 0, 0.81);
+  box-shadow: 5px 5px 12px 10px rgba(0, 0, 0, 0.81);
 }
 .gridCell {
-  border: black solid 1px;
-  box-sizing: border-box;
   transition: all 0.2s;
 }
 
